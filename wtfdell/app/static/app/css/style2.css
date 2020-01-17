@@ -1,0 +1,302 @@
+body,html{
+    background:#001420;
+    color: #ffffff !important;
+    overflow-y: hidden;
+    overflow: hidden;
+    overflow-x:hidden;
+}
+
+.container{
+    margin: 3.9999vh 0px 3.9999vh 0px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 19.9999% 59.9999% 19.9999%;
+}
+
+.card{
+    display: grid;
+    grid-template-rows: 14.9999% 69.9999% 14.9999%;
+    grid-template-columns: auto;
+    height: 90.9999vh;
+}
+
+.middle{
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0.2rem 0.1rem 0.3rem 0.3rem rgb(1, 2, 14, .4);
+    border-radius: 0.2rem;
+    background-color: #00171f;
+}
+
+.middle > form.middle-form{
+    display: grid;
+    grid-template-rows: 39.9999% 14.9999% 14.9999% auto;
+    grid-template-columns: auto;
+    grid-gap: 0.1rem;
+    height: 100%;
+}
+
+.middle > form.middle-form > .middle-form--textarea {
+    background-color: transparent;
+}
+
+.middle > form.middle-form > .middle-form--textarea > textarea {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    width: 98.9999%;
+    height: 94.9999%;
+    margin: 0.2rem 0.1rem 0.2rem 0.1rem;
+    color: white;
+    transition: 1s;
+}
+
+.middle > form.middle-form > .middle-form--textarea > textarea:hover {
+    border-bottom: 0.2rem solid #326dbb;
+    font-size: 1rem;
+    border: 0;
+    transition: 0.3s;
+}
+
+.middle > form.middle-form > .middle-form--textarea > textarea:active {
+    color: white;
+    border-bottom: .2rem solid #326dbb;
+    box-shadow: 0.5rem 0.3rem 0.3rem 0.4rem #025255b9;
+    background-color: #001420 !important;
+    font-size: 1rem;
+    border: 0;
+    transition: 1s;
+}
+
+.middle > form.middle-form > .middle-form--textarea > textarea:focus {
+    color: white;
+    border-bottom: .2rem solid #326dbb;
+    box-shadow: 0.4rem 0.3rem 0.3rem 0.3rem #022246b9;
+    background-color: #001420 !important;
+    font-size: 1.2rem;
+    border: 0;
+    transition: 1s;
+}
+
+.middle > form.middle-form > .middle-form--checkbox {
+    background-color: transparent;
+}
+
+.middle > form.middle-form > .middle-form--actions {
+    background-color: transparent;
+}
+
+.regular-checkbox {
+	-webkit-appearance: none;
+    background-color: transparent;
+	border: 0.1rem solid #ffffff;
+	box-shadow: 0 1px 2px rgba(218, 55, 233, 0.05), inset 0px -15px 10px -12px rgba(219, 11, 238, 0.171);
+	padding: 0.7rem;
+	border-radius: 0.3rem;
+	display: inline-block;
+	position: relative;
+}
+
+.regular-checkbox:active, .regular-checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.regular-checkbox:checked {
+	background-color: #00171f;
+	border: 0.1rem solid #08af1e;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(158, 16, 134, 0.05), inset 15px 10px -12px rgba(219, 20, 96, 0.1);
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.regular-checkbox:hover{
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(158, 16, 134, 0.05), inset 15px 10px -12px rgba(219, 20, 96, 0.1);
+    color: #ffffff;
+    cursor: pointer;
+    border: 0.2rem solid fuchsia;
+}
+
+.regular-checkbox:checked:after {
+	content: '\1F649';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 0.2rem;
+	color: #ffffff;
+}
+
+.middle-form--checkbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 1.3rem;
+}
+
+.middle-form--actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.middle-form--actions > a >.btn-delete {
+    margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+    color: white;
+    background-color: #e71d36;
+    width: 8rem;
+    height: 2.3rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+}
+
+.btn-save {
+    margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+    color: white;
+    background-color: #2ec4b6;
+    width: 8rem;
+    height: 2.3rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+}
+
+.middle-form--actions > a >.btn-delete:hover {
+    margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+    color: white;
+    background-color: #a80719;
+    width: 8.5rem;
+    height: 2.5rem;
+    border-radius: 0.1rem;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+.btn-save:hover {
+    margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+    color: white;
+    background-color: #109487;
+    width: 8.5rem;
+    height: 2.5rem;
+    border-radius: 0.1rem;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+
+.middle-form--actions > a >.btn-delete:hover{
+   cursor: pointer;
+}
+
+.btn-save:hover {
+   cursor: pointer;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.fa-arrow-left{
+    margin-right: 0.5rem;
+    font-size: 1em;
+    transition: 1s;
+}
+
+.linear-wipe {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 1.2em;
+	font-weight:bold;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #f35626;
+	background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+    animation: hue 10s infinite linear;
+    transition: 1s;
+}
+
+.fa-arrow-left:hover {
+    font-size: 2rem;
+    font-weight: bolder;
+    animation: bbb 2s 1 linear;
+    transition: 1s;
+    color: fuchsia;
+}
+
+.linear-wipe:hover {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 1.2em;
+	font-weight:bold;
+	letter-spacing: 2em;
+	text-align: center;
+    color: #f16785;
+    border-bottom: .2rem solid #326dbb;
+	background-image: -webkit-linear-gradient(92deg, #df70ee, #6ae46a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 2s infinite linear;
+    animation: hue 2s infinite linear;
+    transition: 2s;
+}
+
+.fa-arrow-left:hover ~ .linear-wipe {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 1.2em;
+	font-weight:bold;
+	letter-spacing: 2em;
+	text-align: center;
+    color: #f16785;
+    border-bottom: .2rem solid #326dbb;
+	background-image: -webkit-linear-gradient(92deg, #df70ee, #6ae46a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 2s infinite linear;
+    animation: hue 2s infinite linear;
+    transition: 2s;
+}
+
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+@keyframes bbb {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: -360deg;
+    }
+}
+
+@media (max-width: 414px) {
+    .container{
+        margin: 3.9999vh 0px 3.9999vh 0px;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 9.9999% 79.9999% 9.9999%;
+    }
+    .card{
+        display: grid;
+        grid-template-rows: 9.9999% 79.9999% 9.9999%;
+        grid-template-columns: auto;
+        height: 90.9999vh;
+    }
+    .middle > form.middle-form > .middle-form--textarea > textarea {
+        width: 95.9999%;
+        height: 94.9999%;
+        margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+        color: white;
+    }
+}

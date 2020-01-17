@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid | Flex</title>
+    <link rel="stylesheet" href="{% static 'app/css/style2.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+        </div>
+        <div class="card">
+            <div class="top">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <h4 class="linear-wipe"> <a href="{% url 'index' %}"> Back ?</a></h4>
+            </div>
+            <div class="middle">
+                    {% if todo.complete %}
+                    <form class="middle-form" action="{% url 'update' todo.pk %}" method="POST" role="form">
+                        {% csrf_token %}
+                        <div class="middle-form--textarea">
+                            {{form.text}}
+                            <p style="padding: 0.5rem;">{{todo.text}}</p>
+                        </div>
+                        <div class="middle-form--checkbox">
+                            <p>Completed ? &nbsp;&nbsp;</p>
+                            <input class="regular-checkbox" type="checkbox" id="complete" name="complete" checked disabled>
+                        </div>
+                        <div class="middle-form--actions">
+                            <a href="{% url 'delete' todo.pk %}"> <button class="btn-delete" type="submit"> <i class="fa fa-trash-o" aria-hidden="true" color="black"></i> | Delete </button></a>
+                            <button class="btn-save" type="submit"> <i class="fa fa-check" aria-hidden="true" color="black"></i> | Update</button>
+                        </div>
+                    </form>
+                    {% else %}
+                    <form class="middle-form" action="">
+                        {% csrf_token %}
+                        <div class="middle-form--textarea">
+                            {{form.text}}
+                            <p style="padding: 0.5rem;">{{todo.text}}</p>
+                        </div>
+                        <div class="middle-form--checkbox">
+                            <p>Completed ? &nbsp;&nbsp;</p>
+                            <a href="{% url 'complete' todo.pk %}">
+                                <input class="regular-checkbox" type="checkbox" id="complete" name="complete">
+                            </a>
+                            
+                        </div>
+                        <div class="middle-form--actions">
+                            <a href="{% url 'delete' todo.pk %}"> <button class="btn-delete" type="submit"> <i class="fa fa-trash-o" aria-hidden="true" color="black"></i> | Delete</button></a>
+                            <button class="btn-save" type="submit"><i class="fa fa-check" aria-hidden="true" color="black"></i> | Update</button>
+                        </div>
+                    </form>
+                    {% endif %}
+
+            </div>
+            <div class="bottom">
+            </div>
+        </div>
+        <div class="right">
+        </div>
+    </div>
+</body>
+
+</html>

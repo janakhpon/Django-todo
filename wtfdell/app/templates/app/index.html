@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid | Flex</title>
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-container">
+            <div class="nav-container--item">
+                <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; <b>Home</b>
+            </div>
+
+            <div class="nav-container--item">
+                <input class="nav-container--item_search" type="text" name="search" id="search" />
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="nav-container--item_hide-on-mobile">
+                &nbsp;
+            </div>
+            <div class="nav-container--item_hide-on-mobile">
+                &nbsp;
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="main-container--item-form">
+
+                <form class="main-container--item-form_content" action="{% url 'add' %}" method="POST" role="form">
+                    {% csrf_token %}
+                    <div class="main-container--item-form_content__textarea full-width">
+                        {{ form.text }}
+                    </div>
+                    <div class="main-container--item-form_content__btn full-width">
+                        <button type="submit"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                            | Save</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="main-container--item-list">
+                <div class="main-container--item-list_wrapper">
+
+                    {% for t in mytodo %}
+                    {% if t.complete %}
+                    <div class="main-container--item_list-control">
+                        <div class="post-text">
+                            <div class="post-text--txt">
+                                <p>{{t.text}}</p>
+                            </div>
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-actions-btn">
+                                <button class="btn-save" type="submit"> <a href="{% url 'detail' t.pk %}">
+                                        <i class="fa fa-check" aria-hidden="true" color="black"></i>
+                                        | Update </a></button>
+                            </div>
+                            <div class="post-actions-btn">
+                                <span>&nbsp;</span>
+                            </div>
+                            <div class="post-actions-btn">
+                                <button class="btn-danger" type="submit">
+                                    <a href="{% url 'delete' t.pk %}">
+                                        <i class="fa fa-trash-o" aria-hidden="true" color="black"></i> | Delete
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% else %}
+
+
+
+                    <div class="main-container--item_list-control">
+                        <div class="post-text">
+                            <div class="post-text--txt">
+                                <p>{{t.text}}</p>
+                            </div>
+                            <div class="post-text--action">
+                                <a href="{% url 'complete' t.pk %}">
+                                    <input class="regular-checkbox" type="checkbox" id="complete" name="complete">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-actions-btn">
+                                <button class="btn-save" type="submit"> <a href="{% url 'detail' t.pk %}">
+                                        <i class="fa fa-check" aria-hidden="true" color="black"></i>
+                                        | Update </a></button>
+                            </div>
+                            <div class="post-actions-btn">
+                                <span>&nbsp;</span>
+                            </div>
+                            <div class="post-actions-btn">
+                                <button class="btn-danger" type="submit">
+                                    <a href="{% url 'delete' t.pk %}">
+                                        <i class="fa fa-trash-o" aria-hidden="true" color="black"></i> | Delete
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+
+                    {% endfor %}
+
+                    <div class="hide-on-desktop">
+                        <br>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>
